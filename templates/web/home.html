@@ -1,0 +1,107 @@
+{% extends 'layouts/main.html' %}
+{% load static %}
+
+    {% block content %}
+    <style>
+        h1 {
+        font-size: 12px;
+        background: -webkit-linear-gradient(#994c4c, #222a68);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      h3 {
+        font-size: 12px;
+        background: -webkit-linear-gradient(#e3cdcd, #9ba5f1,#bcecb2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-left: 20%;
+        margin-top: -6%;
+      }
+      .card {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin: 10px;
+        opacity: .5;
+    }
+      .card-img-top{
+        width: 30%;
+        height:10%;
+      }
+      .link{
+        text-decoration: none;
+        font-size: 20px;
+        background: -webkit-linear-gradient(#de0551, #031de8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        /*animation: animate 
+                1.5s linear infinite;*/
+      }
+      @keyframes animate {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 0.7;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+    .container{
+        margin: 0 10px;
+    }
+    .image-and-heading {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .image {
+        max-width: 100px; 
+        height: auto;
+        margin-right: 10px; 
+    }
+    #data{
+        text-align: right;
+    }
+    </style>
+    <!-- <marquee width="95%" direction="left" height="100px">
+        Winner People Benefit Fund Limited
+    </marquee> -->
+
+    <!-- <div class="image-and-heading">
+        <img src="{% static 'images/WPBL.jpg' %}" alt="image" style="width: 15%;">
+        <h3>Winner People Benefit Fund Limited</h3>
+    </div>
+     -->
+    
+    <div class="card mx-auto" style="width: 20rem;">
+        <img class="card-img-top mx-auto" src="{% static 'images/1.jpg' %}" alt="Card image cap" >
+        <div class="card-body">
+            <h5 class="card-title"><a href="{% url 'index' %}" class="link">DSA</a></h5>
+            <p class="card-text">The Daily Savings Account (DSA) is a transactional and investing account. The product is intended for clients who have high day-end balances on one day while having low balances on others and want to be rewarded for their high days.</p>
+            <p class="card-text"><small class="text-muted">Last updated !!!</small></p>
+        </div>
+    </div>
+    <div class="card mx-auto" style="width: 20rem;" >
+        <img class="card-img-top mx-auto" src="{% static 'images/3.jpg' %}" alt="Card image cap" >
+        <div class="card-body">
+            <h5 class="card-title"><a href="#" class="link">SAD</a></h5>
+            <p class="card-text">TA savings account is a basic account type that allows you to put money into a bank safely. It protects your money's safety and accessibility whenever you need it. You can withdraw your funds at any moment, either digitally or in person.</p>
+            <p class="card-text"><small class="text-muted">Last updated !!!</small></p>
+        </div>
+    </div>
+    
+   <!-- <div class="container" id="data">
+    <h1>Founder Of The Company</h1>
+    <h1>S.ThangaKumar</h1>
+    
+    </div> -->
+    
+        
+        
+      
+        {% endblock content %}
+
+

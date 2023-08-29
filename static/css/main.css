@@ -1,0 +1,15 @@
+body{
+    background-image: url(https://t4.ftcdn.net/jpg/01/70/93/27/360_F_170932733_VOHGeaH5AjrVCXBVryEwVgwhArv2wNNH.jpg);
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    color: white;
+    -webkit-touch-callout: none; /* Disable selection on iOS */
+        -webkit-user-select: none; /* Disable selection on webkit browsers */
+        -moz-user-select: none; /* Disable selection on Mozilla Firefox */
+        -ms-user-select: none; /* Disable selection on Microsoft Edge */
+        user-select: none;
+    
+}   
+body::oncontextmenu {
+    return false;
+}

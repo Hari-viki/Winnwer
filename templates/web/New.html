@@ -1,0 +1,63 @@
+
+{% extends 'layouts/main.html' %}
+{% block content %}
+<!-- <h2>DSA Account</h2> --><br><Br>
+<form method="POST" action="New">
+    {% csrf_token %}
+    <!-- {{ form.as_p }} -->
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">DSA New User Registration</h3>
+                    </div>
+                    <div class="card-body">
+                <form>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="" class="form-label"><b><i>ID:</i></b></label><br>
+                            &nbsp;&nbsp;{{form.num}}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="" class="form-label"><b><i>Name:</i></b></label><br>
+                            &nbsp;&nbsp;{{form.name}}
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="" class="form-label"><b><i>Phone number:</i></b></label><br>
+                            &nbsp;&nbsp;{{form.phone}}
+                        </div>
+                    </div>
+                        
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="" class="form-label"><b><i>Date of Acc Create:</i></b></label><br>
+                            &nbsp;&nbsp;{{form.date}}
+                        </div>
+                    </div>
+                 
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="" class="form-label"><b><i>Account Duration:</i></b></label><br>
+                            &nbsp;&nbsp;{{form.year}}
+                        </div>
+                    </div> 
+                    
+                    &nbsp;&nbsp; <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+   
+</form>
+{% endblock content %}

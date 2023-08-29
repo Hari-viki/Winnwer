@@ -1,0 +1,102 @@
+{% extends 'layouts/main.html' %}
+{% block content %}
+<style>
+    body{
+        color: white;
+    }
+</style>
+<!-- <h1>hello</h1> -->
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header"><h3 class="card-title">ADMIN FORUM</h3></div>
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Sidebar</h5> -->
+                        <p class="card-text"><b><a href="{% url 'adminuser' %}"><button class="btn btn-success">DSA</button></a></b></p>
+                        <p class="card-text"><b><a href="{% url 'adminSAD' %}"><button class="btn btn-warning">SAD</button></a></b></p>
+                    </div>
+                </div>
+            </div>
+
+            <!--Button onclick to dsa-->
+            <div class="col-md-9" style="color:aliceblue">
+                <h1 style="color:aliceblue">DAILY SAVINGS DETAILS</h1>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Enter Date to View User's Data</h3>
+                        <form  method="post">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Select Date</label>
+                                <input type="date" name="transaction_date" id="transaction_date" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--End dsa button-->
+            <!-- <form>
+                
+                <label for="transaction_date">Select a Date:</label>
+                <input type="date" id="transaction_date" name="transaction_date">
+                <button type="submit">Show Details</button>
+            </form> -->
+        
+            <!-- {% if transaction_details %}
+    <h2>Transaction Details:</h2>
+    <ul>
+        {% for user, transactions in transaction_details.items %}
+        <li>User: {{ user.name }} Id : {{user.num}}</li>
+        <ul>
+            {% if transactions %}
+                {% for transaction in transactions %}
+                <li>Deposit: {{ transaction.deposit }}, Withdraw: {{ transaction.withdraw }}</li>
+                {% endfor %}
+            {% else %}
+                <li>No transactions available for this user on the selected date.</li>
+            {% endif %}
+        </ul>
+        {% endfor %}
+    </ul>
+    {% endif %} -->
+
+    {% if transaction_details %}
+    <h2>Transaction Details:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>User ID</th>
+                <th>Deposits</th>
+                <th>Withdrawals</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user, transactions in transaction_details.items %}
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.num }}</td>
+                    <td>
+                        
+                        {% for transaction in transactions %}
+                            {{ transaction.deposit }}
+                        {% endfor %}
+                        
+                    </td>
+                    <td>
+                        
+                        {% for transaction in transactions %}
+                            {{ transaction.withdraw }}
+                        {% endfor %}
+                        
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+
+{% endblock content %}
